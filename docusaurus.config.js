@@ -1,8 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require('prism-react-renderer/themes/shadesOfPurple');
+const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -36,15 +36,13 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+         
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -53,9 +51,27 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      'content-docs',
+      ({
+        id:'features',
+        path:'features',
+        routeBasePath:'/features',
+        sidebarPath:require.resolve('./emptly-sidebar.js')
+      })
+    ],
+
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
+      },
       announcementBar: {
         id: 'support_us',
         content:
@@ -65,10 +81,10 @@ const config = {
         isCloseable: true,
       },
       navbar: {
-        title: 'Welcome Guys!',
+        title: '',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/large_helpably.png',
         },
         items: [
           {
@@ -77,16 +93,21 @@ const config = {
             position: 'right',
             label: 'Start learning',
           },
+          {
+            to:'/features/coming-soon',
+            position: 'right',
+            label: 'Roadmap',
+          },
         ],
       },
       footer: {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Start Learning',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Introduction',
                 to: '/docs/intro',
               },
             ],
@@ -96,7 +117,7 @@ const config = {
             items: [
               {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: '/',
               },
             ],
           },

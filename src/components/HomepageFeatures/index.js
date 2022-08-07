@@ -59,3 +59,66 @@ export default function HomepageFeatures() {
     </section>
   );
 }
+
+/* 
+
+{
+ "logoPosition": "right",
+ "pages": [
+  {
+   "name": "page1",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "question2",
+     "title": "Which of the following are the advantages of React.js?",
+     "correctAnswer": "item4",
+     "choices": [
+      {
+       "value": "item1",
+       "text": "React.js can increase the application's performance with Virtual DOM."
+      },
+      {
+       "value": "item2",
+       "text": "React.js is easy to integrate with other frameworks such as Angular, BackboneJS since it is only a view library."
+      },
+      {
+       "value": "item3",
+       "text": "React.js can render both on client and server side."
+      },
+      {
+       "value": "item4",
+       "text": "All of the above"
+      }
+     ]
+    },
+    {
+     "type": "radiogroup",
+     "name": "question1",
+     "title": "What of the following is used in React.js to increase performance?",
+     "correctAnswer": "item2",
+     "choices": [
+      {
+       "value": "item1",
+       "text": "Original DOM"
+      },
+      {
+       "value": "item2",
+       "text": "Virtual DOM"
+      },
+      {
+       "value": "item3",
+       "text": "Both A and B."
+      },
+      {
+       "value": "item4",
+       "text": "None of the above."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
+
+*/
