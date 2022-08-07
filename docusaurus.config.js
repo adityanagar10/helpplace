@@ -34,15 +34,9 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-         
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -61,7 +55,24 @@ const config = {
         sidebarPath:require.resolve('./emptly-sidebar.js')
       })
     ],
-
+    [
+      'content-docs',
+      ({
+        id:'learn',
+        path:'learn',
+        routeBasePath:'/learn',
+        sidebarPath:require.resolve('./sidebars.js')
+      })
+    ],
+    [
+      'content-docs',
+      ({
+        id:'me',
+        path:'me',
+        routeBasePath:'/',
+        sidebarPath:require.resolve('./emptly-sidebar.js')
+      })
+    ],
   ],
 
   themeConfig:
@@ -84,20 +95,24 @@ const config = {
         title: '',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/large_helpably.png',
+          src: 'img/logo.svg',
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
+            to:'/learn/intro',
             position: 'right',
-            label: 'Start learning',
+            label: 'Learn',
           },
           {
             to:'/features/coming-soon',
             position: 'right',
             label: 'Roadmap',
           },
+          // {
+          //   to:'/about-me',
+          //   position: 'right',
+          //   label: 'About Us',
+          // },
         ],
       },
       footer: {
