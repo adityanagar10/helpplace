@@ -1,0 +1,81 @@
+---
+sidebar_position: 3
+title: What are Props?
+---
+
+I believe that State and Props are two of the most commonly used terms in React and as a beginner, two of the most confusing. I remember that when I gave an interview as a web developer for a club in my university, they did ask me this question and I was actually out of words.  Of course, I knew how to use them, but I could not explain it. 
+
+First I would like to explain what a props is then we will compare state and props!
+
+### Props?
+Props is short for properties and they are "options" received from a parent component. It is generally immutable, meaning it cannot be changed by a child.
+
+They can be understood by relating them to function parameters in most programming languages. 
+
+```js title="A regular Javascript function"
+
+const SampleFunction = (name) => {
+    console. log("Good morning", name)
+}
+
+SampleFunction("Aditya");
+SampleFunction("Mukesh")
+```
+
+As we can see above, the same function was used twice!
+
+:::info
+Remember we discussed how React components are reusable? Props is what allows us to reuse them. 
+:::
+
+
+Props are passed to the child component within a return or a render method of the parent. 
+
+```js
+import Child from '. /Child. js'
+
+function Parent(){
+    return(
+
+        //passing name = "Aditya" as prop
+
+        <Child name="Aditya" />
+    )
+}
+
+export default Parent
+```
+
+A prop can be anything from data to a callback function.
+
+So now we can access "name" inside the component "Child".  Most commonly it is done as 
+
+```js
+//I am using functional components here
+
+export default Child = (props) => {
+    console. log(props. name)
+}
+
+//or by destructing
+
+export default Child = ({name}) => {
+    console. log(name)
+}
+```
+
+Generally props are immutable but if a child wants to change the prop passed to it, it is usually done through child events and parent callbacks (which we will discuss later). 
+
+:::tip Summary
+
+- Props are mostly used to communicate between components.
+
+- Passed from a child to a parent.
+
+- A parents state can be a child's prop.
+
+- Props are immutable.
+
+- It can be anything from data to callback functions
+
+:::
