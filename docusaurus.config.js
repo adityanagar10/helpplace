@@ -1,5 +1,4 @@
-// @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+
 
 const lightCodeTheme = require('prism-react-renderer/themes/shadesOfPurple');
 const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
@@ -12,13 +11,12 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'ignore',
-  favicon: 'img/favicon.ico',
+  // favicon: 'img/favicon.ico',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
-
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
@@ -83,20 +81,12 @@ const config = {
         disableSwitch: false,
         respectPrefersColorScheme: false,
       },
-      announcementBar: {
-        id: 'support_us',
-        content:
-          'TESTING',
-        backgroundColor: '#fafbfc',
-        textColor: '#091E42',
-        isCloseable: true,
-      },
       navbar: {
-        title: '',
-        logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
-        },
+        title: 'Help Place',
+        // logo: {
+        //   alt: 'My Site Logo',
+        //   src: 'img/logo.svg',
+        // },
         items: [
           {
             to:'/learn/intro',

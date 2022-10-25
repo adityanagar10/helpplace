@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/list.svg').default,
     description: (
       <>
         HelpPlace allows you to start learning without the need of any accounts or annoying popups so that you can focus on what's important! 
@@ -14,7 +14,7 @@ const FeatureList = [
   },
   {
     title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/Coder.svg').default,
     description: (
       <>
         HelpPlace lets you focus on your learning by providing only up-to-date and quality information.
@@ -23,7 +23,7 @@ const FeatureList = [
   },
   {
     title: 'Upcoming Features',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/FAQ.svg').default,
     description: (
       <>
        HelpPlace is constantly working on make our website perfect. Keep track of upcoming features here.

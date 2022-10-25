@@ -1,0 +1,145 @@
+---
+title: Conditional Rendering
+sidebar_position: 4
+---
+
+Conditional rendering is the process of displaying a particular piece of content based on the state of another part of your app. It's important to think about conditional rendering in React because it can help you save time by preventing errors from occurring.
+
+Consider an example: you have a list of users, each with their own information. You want to show the last name of each user in their profile card, but only if they've been active for more than 24 hours. If they've been active for less than 24 hours, you'd want to display their first name instead.
+
+In other words, if a user has been active for more than 24 hours, then they should have their last name displayed in their profile card. If they haven't been active for more than 24 hours, then they should have their first name displayed instead.
+
+The functionality of conditional rendering in React is analogous to that of conditions in JavaScript. You can create elements that represent the current state by using JavaScript operators such as if or the conditional operator, and then you can let React update the UI to match those elements.
+
+
+Here is an example from React's own documentation: 
+
+```js
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    return <UserGreeting />;
+  }
+  return <GuestGreeting />;
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+// Try changing to isLoggedIn={true}:
+root.render(<Greeting isLoggedIn={false} />);
+
+```
+
+
+## Inline If with Logical && Operator
+
+Expressions can be embedded in JSX by enclosing them in curly braces. This includes the logical && operator in JavaScript. It's useful for conditionally including an element:
+
+```js
+function Mailbox(props) {
+  const unreadMessages = props.unreadMessages;
+  return (
+    <div>
+      <h1>Hello!</h1>
+      {unreadMessages.length > 0 &&
+        <h2>
+          You have {unreadMessages.length} unread messages.
+        </h2>
+      }
+    </div>
+  );
+}
+
+const messages = ['React', 'Re: React', 'Re:Re: React'];
+
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+root.render(<Mailbox unreadMessages={messages} />);
+```
+
+
+
+It works because true && expression in JavaScript always evaluates to expression and false && expression always evaluates to false.
+
+As a result, if the condition is met, the element following && will be displayed in the output. React will ignore and skip it if it is false.
+
+Returning a false expression will still skip the element after && but will return the false expression. The render method will return div>0/div> in the example below.  
+
+```js
+render() {
+  const count = 0;
+  return (
+    <div>
+      {count && <h1>Messages: {count}</h1>}
+    </div>
+  );
+}
+```
+
+
+## Inline If-Else with Conditional Operator
+
+The JavaScript conditional operator condition? can also be used to conditionally render elements inline. false: true
+
+In the following example, we conditionally render a small block of text.
+
+```js
+render() {
+  const isLoggedIn = this.state.isLoggedIn;
+  return (
+    <div>
+      The user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in.
+    </div>
+  );
+}
+```
+
+
+## Preventing Component from Rendering    
+
+
+In rare cases, you may want a component to hide itself even if another component rendered it. To accomplish this, return null instead of the render output.
+
+In the following example, the <WarningBanner /> is rendered based on the value of the warn prop. If the prop value is false, the component does not render:
+
+```js
+function WarningBanner(props) {
+  if (!props.warn) {
+    return null;
+  }
+
+  return (
+    <div className="warning">
+      Warning!
+    </div>
+  );
+}
+
+class Page extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {showWarning: true};
+    this.handleToggleClick = this.handleToggleClick.bind(this);
+  }
+
+  handleToggleClick() {
+    this.setState(state => ({
+      showWarning: !state.showWarning
+    }));
+  }
+
+  render() {
+    return (
+      <div>
+        <WarningBanner warn={this.state.showWarning} />
+        <button onClick={this.handleToggleClick}>
+          {this.state.showWarning ? 'Hide' : 'Show'}
+        </button>
+      </div>
+    );
+  }
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+root.render(<Page />);
+```
+
+Returning null from a component’s render method does not affect the firing of the component’s lifecycle methods. For instance componentDidUpdate will still be called.
